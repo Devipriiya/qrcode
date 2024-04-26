@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      table {
+        font-family: "Nunito", sans-serif;
+        padding: 0;
+        margin: 0;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      p {
+        margin: 0;
+        padding: 2px 0;
+      }
+      .font-lg {
+        font-size: 20px;
+      }
+      .font-xl {
+        font-size: 30px;
+      }
+      .font-md {
+        font-size: 16px;
+      }
+      .hd {
+        height: 200px;
+      }
+      .logo {
+        height: 120px;
+        width: 120px;
+        margin: 0 auto;
+        margin-top: -60px;
+        border-radius: 50%;
+        background-color: #000;
+        box-shadow: 0 0 5px #8c8c8c;
+      }
+      .loader {
+        width: 300px;
+        height: 300px;
+        margin: 75px auto;
+        position: relative;
+      }
+      .font-counter {
+        font-size: 50px;
+        padding-top: 106px;
+      }
+      .dot {
+        width: 7px;
+        height: 24px;
+        border-radius: 7px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: hsl(0, 0%, 90%); /* Grey color */
+        transition: background-color 0.1s ease-in-out; /* Added transition */
+      }
+      .filled {
+        background-color: #f1ae13b8; /* Yellow color */
+      }
+      .circle {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+      .dot.large {
+        width: 12px;
+        top: 49%;
+        left: 49%;
+        height: 30px;
+        border-radius: 7px;
+      }
+      .large-dots {
+        width: 10px;
+        height: 30px;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 100%; margin: 0 auto; overflow: hidden">
+      <div
+        class="hd"
+        style="
+          width: 180%;
+          border-radius: 50%;
+          background-color: #478a35;
+          margin-left: -42%;
+          margin-top: -71px;
+        "
+      ></div>
+      <div class="logo">
+        <img
+          src="<%=site_url%>/static/images/24_sju_black.png"
+          style="width: 100%"
+        />
+      </div>
+      <div style="padding: 15px">
+        <div style="text-align: center">
+          <h1 class="font-xl vlk">Välkommen</h1>
+          <h1
+            class="font-lg"
+            style="margin: 5px 0; color: #438931; letter-spacing: 4px"
+          >
+            <%=customer_name%>
+          </h1>
+          <div class="loader" id="loader" style="color: #438931">
+            <div class="dot-container">
+              <!-- Adjust the size and position of the dots below -->
+              <!-- Add more dots here -->
+            </div>
+            <div class="circle" id="circle"></div>
+            <p class="font-counter" id="timer" data-count="10">10</p>
+            <p class="sec">sec</p>
+          </div>
+          <img
+            style="
+              position: absolute;
+              top: -16px;
+              left: calc(50% - 16px);
+              width: 32px;
+              height: 32px;
+            "
+            src="<%=site_url%>/static/images/ic_warning.png"
+          />
+          <h3
+            class="font-md"
+            style="line-height: 117px; font-weight: 800; margin: 0"
+          >
+            Dörren kan bara läsa igen när timern har gått ut
+          </h3>
+        </div>
+      </div>
+    </div>
+    <script src="<%=site_url%>/static/js/dc.open.js"></script>
+  </body>
+</html>
